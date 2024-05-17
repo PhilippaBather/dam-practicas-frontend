@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid white;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(126,51,123,1) 10%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    padding: 1rem 0 1rem 0;
+}
+
+.header_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-size: 0.6rem;
+    font-family: "Kode Mono", monospace;
+    padding-left: 0.75rem;
+}
+
+.header_nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 0.75rem;
+    list-style-type: none;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8rem;
+}
