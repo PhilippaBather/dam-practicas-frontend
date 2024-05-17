@@ -7,7 +7,7 @@ class ProductionCompany
     private string $location;
     private int $revenue;
     private string $established;
-    private bool $is_active;
+    private bool $active;
 
     /**
      * @param string $name
@@ -22,7 +22,7 @@ class ProductionCompany
         $this->location = $location;
         $this->revenue = $revenue;
         $this->established = $established;
-        $this->is_active = $is_active;
+        $this->active = $is_active;
     }
 
 
@@ -68,14 +68,14 @@ class ProductionCompany
         $this->established = $established;
     }
 
-    public function isIsActive(): bool
+    public function isActive(): bool
     {
-        return $this->is_active;
+        return $this->active;
     }
 
-    public function setIsActive(bool $is_active): void
+    public function setActive(bool $active): void
     {
-        $this->is_active = $is_active;
+        $this->active = $active;
     }
 
 }

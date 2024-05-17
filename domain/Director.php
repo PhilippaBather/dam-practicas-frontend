@@ -7,7 +7,7 @@ class Director
     private string $surname;
     private int $accolades;
     private string $birthdate;
-    private string $has_oscar;
+    private string $oscar;
 
     /**
      * @param string $name
@@ -22,7 +22,7 @@ class Director
         $this->surname = $surname;
         $this->accolades = $accolades;
         $this->birthdate = $birthdate;
-        $this->has_oscar = $has_oscar;
+        $this->oscar = $has_oscar;
     }
 
     // getters and setters
@@ -66,14 +66,14 @@ class Director
         $this->birthdate = $birthdate;
     }
 
-    public function getHasOscar(): string
+    public function getOscar(): string
     {
-        return $this->has_oscar;
+        return $this->oscar;
     }
 
-    public function setHasOscar(string $has_oscar): void
+    public function setOscar(string $oscar): void
     {
-        $this->has_oscar = $has_oscar;
+        $this->oscar = $oscar;
     }
 
 }

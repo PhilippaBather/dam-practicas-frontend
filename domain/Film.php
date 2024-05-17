@@ -6,7 +6,7 @@ class Film
     private string $title;
     private string $genre;
     private int $revenue;
-    private string $release;
+    private string $release_date;
 
     private bool $family_friendly;
 
@@ -22,7 +22,7 @@ class Film
         $this->title = $title;
         $this->genre = $genre;
         $this->revenue = $revenue;
-        $this->release = $release;
+        $this->release_date = $release;
         $this->family_friendly = $family_friendly;
     }
 
@@ -58,14 +58,14 @@ class Film
         $this->revenue = $revenue;
     }
 
-    public function getRelease(): string
+    public function getReleaseDate(): string
     {
-        return $this->release;
+        return $this->release_date;
     }
 
-    public function setRelease(string $release): void
+    public function setReleaseDate(string $release_date): void
     {
-        $this->release = $release;
+        $this->release_date = $release_date;
     }
 
     public function isFamilyFriendly(): bool
