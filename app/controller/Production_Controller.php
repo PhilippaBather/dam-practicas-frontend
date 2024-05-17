@@ -30,7 +30,7 @@ class Production_Controller extends Controller
 
         if (isset($_GET['method']) && $_GET['method'] == 'update-company') {
             $company = $this->production_model->getSelectedCompany();
-            $this->getView("update_company", $company);
+            $this->getView("delete_company", $company);
         } else {
             require_once $this->production_view->render();
         }

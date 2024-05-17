@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/app/pages/main.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/app/pages/update_company.css">
+    <link rel="stylesheet" type="text/css" href="/app/pages/form.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
