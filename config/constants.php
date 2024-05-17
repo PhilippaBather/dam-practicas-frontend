@@ -4,7 +4,11 @@
 define('APP_NAME', 'Film Affinity');
 define('APP_ENV', 'dev');
 
-// TODO - DB configurations
+// database configurations
+define('DB_HOST', 'localhost:3305');
+define('DB_NAME', 'filmapi');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
 // file paths
 define('CONTROLLER_PATH', '../app/controller/');
