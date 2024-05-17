@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/app/pages/main.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/app/pages/film_home.css">
+    <link rel="stylesheet" type="text/css" href="/app/pages/table.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Raleway:wght@400;600&family=Roboto:wght@300;400;500;700;900&family=Slackside+One&display=swap"
           rel="stylesheet">
-    <title>SoundStream: Home</title>
+    <title>Film Affinity: Home</title>
 </head>
 <body>
 
@@ -97,3 +97,6 @@
 
 
 <?php include 'footer.php' ?>
+
+</body>
+</html>
