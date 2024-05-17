@@ -90,4 +90,36 @@ class Database
         $stmt->bindParam(':company_id', $company_id);
         $stmt->execute();
     }
+
+    public function getDirectorById(mixed $director_id)
+    {
+        $conn = $this->getConnection();
+        $sql_get_director =
+            "SELECT * FROM directors
+             WHERE id = :director_id;";
+
+        $stmt = $conn->prepare($sql_get_director);
+        $stmt->bindParam(':director_id', $director_id);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Director::class);
+
+        $conn = null;
+
+        return $stmt->fetch();
+
+    }
+
+    public function deleteDirectorById($director_id): void
+    {
+        $conn = $this->getConnection();
+        $sql_delete_director =
+            "DELETE FROM directors
+            WHERE id = :director_id;";
+
+        $stmt = $conn->prepare($sql_delete_director);
+        $stmt->bindParam(':director_id', $director_id);
+        $stmt->execute();
+    }
 }
