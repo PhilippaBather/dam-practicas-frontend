@@ -1,0 +1,14 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-form {
+    width: 30%;
+    margin: 0;
+    padding: 1rem 2rem 1rem 2rem;
+    border: 1px solid white;
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(33,41,33,1) 100%);
+}
