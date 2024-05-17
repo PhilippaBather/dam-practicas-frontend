@@ -44,6 +44,8 @@
                 <td class="table-row_td">Yes</td>
                 <td class="table-row_td">10/02/2017</td>
                 <td class="table-row_td">$312,000,000</td>
+                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
+                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
             </tr>
             <tr>
                 <th class="table-row_th" scope="row">This is England</th>
@@ -51,6 +53,8 @@
                 <td class="table-row_td">No</td>
                 <td class="table-row_td">04/01/2008</td>
                 <td class="table-row_td">$5,000,000</td>
+                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
+                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
             </tr>
             <tr>
                 <th class="table-row_th" scope="row">Pulp Fiction</th>
@@ -58,6 +62,8 @@
                 <td class="table-row_td">No</td>
                 <td class="table-row_td">14/10/1994</td>
                 <td class="table-row_td">$107,000,000</td>
+                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
+                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
             </tr>
             </tbody>
         </table>
@@ -83,12 +89,16 @@
                 <td class="table-row_td">26/07/1928</td>
                 <td class="table-row_td">4</td>
                 <td class="table-row_td">Yes</td>
+                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
+                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
             </tr>
             <tr>
                 <th class="table-row_th" scope="row">Spike Lee</th>
                 <td class="table-row_td">20/03/1957</td>
                 <td class="table-row_td">3</td>
                 <td class="table-row_td">Yes</td>
+                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
+                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
             </tr>
             </tbody>
         </table>
