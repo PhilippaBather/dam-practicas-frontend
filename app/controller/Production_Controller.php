@@ -20,6 +20,7 @@ class Production_Controller extends Controller
 
     public function renderView(): void
     {
+        $production_companies = $this->production_model->getProductionCompanies();
         require_once $this->production_view->render();
     }
 

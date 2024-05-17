@@ -22,6 +22,8 @@ class Film_Controller extends Controller
 
     public function renderView(): void
     {
+        $films = $this->film_model->getFilms();
+        $directors = $this->film_model->getDirectors();
         require_once $this->film_view->render();
     }
 
