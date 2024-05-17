@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background: rgba(33, 41, 33, 1);
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
