@@ -53,7 +53,7 @@
                         <?php else: ?>
                             &#10060;
                         <?php endif; ?>
-                    <td class="table-row_td">$<?= htmlspecialchars($company['revenue']); ?></td>
+                    <td class="table-row_td">$<?= htmlspecialchars(number_format(($company['revenue'] / 100), 2, '.', ',')); ?></td>
                     <td class="table-row_td-btn">
                         <a href="index.php?action=production&method=update-company&id=<?= htmlspecialchars($company['id']); ?>">
                             <button class="btn-delete">Delete</button>
