@@ -66,7 +66,7 @@
                 <?php endif; ?>
             </div>
             <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+                <a href="index.php?action=production"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="add_company" value="add_company">Submit</button>
             </div>
         </form>

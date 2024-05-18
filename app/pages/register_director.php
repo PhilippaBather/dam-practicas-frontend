@@ -19,7 +19,7 @@
 
 <main class="main-container">
 
-    <h1 class="page-title">Add Directory</h1>
+    <h1 class="page-title">Add Director</h1>
     <div class="form_container">
         <form class="form" method="post" name="add_director">
             <div class="form_container-input">
@@ -66,7 +66,7 @@
                 <?php endif; ?>
             </div>
             <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+                <a href="index.php?action=film"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="add_director" value="add_company">Submit</button>
             </div>
         </form>
