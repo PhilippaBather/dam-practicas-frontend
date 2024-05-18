@@ -1,5 +1,6 @@
 <?php
 
+namespace domain;
 class Film
 {
 
@@ -10,6 +11,9 @@ class Film
 
     private bool $family_friendly;
 
+    public function __construct0()
+    {}
+
     /**
      * @param string $title
      * @param string $genre
@@ -17,7 +21,7 @@ class Film
      * @param string $release
      * @param bool $family_friendly
      */
-    public function __construct(string $title, string $genre, int $revenue, string $release, bool $family_friendly)
+    public function __construct1(string $title, string $genre, int $revenue, string $release, bool $family_friendly)
     {
         $this->title = $title;
         $this->genre = $genre;

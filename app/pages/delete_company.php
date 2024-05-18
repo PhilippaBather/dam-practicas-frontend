@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Raleway:wght@400;600&family=Roboto:wght@300;400;500;700;900&family=Slackside+One&display=swap"
           rel="stylesheet">
-    <title>Film Affinity: Update Production Company</title>
+    <title>Film Affinity: Delete Production Company</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 
 <main class="main-container">
 
-    <h1 class="page-title">Update Production Company Details</h1>
+    <h1 class="page-title">Delete Production Company</h1>
     <div class="form_container">
         <form class="form" method="post" name="delete_company">
             <div class="form_container-input">
