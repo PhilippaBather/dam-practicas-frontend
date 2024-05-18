@@ -48,7 +48,7 @@ class Database
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getProductionCompanies()
+    public function getProductionCompanies(): false|array
     {
         $conn = $this->getConnection();
         $sql_get_production_companies =
@@ -57,5 +57,37 @@ class Database
         $stmt = $conn->prepare($sql_get_production_companies);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getSelectedCompany($company_id)
+    {
+        $conn = $this->getConnection();
+        $sql_get_company =
+            "SELECT * FROM production_companies
+             WHERE id = :company_id;";
+
+        $stmt = $conn->prepare($sql_get_company);
+        $stmt->bindParam(':company_id', $company_id);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, ProductionCompany::class);
+
+        $conn = null;
+
+        return $stmt->fetch();
+
+    }
+
+    public function deleteSelectedCompany($company_id): void
+    {
+        $conn = $this->getConnection();
+        $sql_delete_company =
+            "DELETE FROM production_companies
+            WHERE id = :company_id;";
+
+        $stmt = $conn->prepare($sql_delete_company);
+        $stmt->bindParam(':company_id', $company_id);
+        $stmt->execute();
     }
 }

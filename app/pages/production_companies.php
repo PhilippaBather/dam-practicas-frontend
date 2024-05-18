@@ -49,7 +49,9 @@
                         <?php endif; ?>
                     <td class="table-row_td">$<?= htmlspecialchars($company['revenue']); ?></td>
                     <td class="table-row_td-btn">
-                        <button class="btn-delete">Delete</button>
+                        <a href="index.php?action=production&method=update-company&id=<?= htmlspecialchars($company['id']); ?>">
+                            <button class="btn-delete">Delete</button>
+                        </a>
                     </td>
                     <td class="table-row_td-btn">
                         <button class="btn-update">Update</button>

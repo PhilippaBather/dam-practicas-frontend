@@ -1,5 +1,6 @@
 <?php
 
+namespace domain;
 class ProductionCompany
 {
 
@@ -9,20 +10,24 @@ class ProductionCompany
     private string $established;
     private bool $active;
 
+    public function __construct0() {
+
+    }
+
     /**
      * @param string $name
      * @param string $location
      * @param int $revenue
      * @param string $established
-     * @param bool $is_active
+     * @param bool $active
      */
-    public function __construct(string $name, string $location, int $revenue, string $established, bool $is_active)
+    public function __construct1(string $name, string $location, int $revenue, string $established, bool $active)
     {
         $this->name = $name;
         $this->location = $location;
         $this->revenue = $revenue;
         $this->established = $established;
-        $this->active = $is_active;
+        $this->active = $active;
     }
 
 
@@ -77,5 +82,6 @@ class ProductionCompany
     {
         $this->active = $active;
     }
+
 
 }

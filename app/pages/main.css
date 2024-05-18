@@ -23,6 +23,7 @@ a {
 
 .page-title, .page-title_subheading, .section-title {
     text-align: center;
+    padding: 1rem;
 }
 
 .page-title_subheading {
