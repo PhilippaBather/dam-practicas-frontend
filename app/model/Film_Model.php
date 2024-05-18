@@ -114,7 +114,10 @@ class Film_Model
             $company_id = Data_Validation::cleanData($_POST['film-company-id']);
             $family_friendly = $this->handleFilmRadioBtnInput();
 
-            $this->validateFilmInput($title, $genre, $revenue, $release_date);
+            $this->validateFilmInput($title, $genre, $revenue, $release_date, $director_id, $company_id);
+
+            $this->checkDirectorExists($director_id);
+            $this->checkCompanyExists($company_id);
 
             if (empty($this->errors)) {
                 try {
@@ -176,7 +179,7 @@ class Film_Model
         }
     }
 
-    private function validateFilmInput(string $title, string $genre, string $revenue, string $release_date): void
+    private function validateFilmInput(string $title, string $genre, string $revenue, string $release_date, string $director_id, string $company_id): void
     {
         if (strlen($title) < 2) {
             $this->errors["title"] = "Title must be 2 or more characters.";
@@ -197,7 +200,35 @@ class Film_Model
         } else if (!Data_Validation::validateDate($release_date)) {
             $this->errors["release"] = "A future release date is not valid.";
         }
+
+        if (empty($director_id)) {
+            $this->errors['director-id'] = "A Director ID is required.";
+        } else if (!is_numeric($director_id)) {
+            $this->errors['director-id'] = "The Director's ID must be a number.";
+        }
+
+        if (empty($company_id)) {
+            $this->errors['company-id'] = "A Production Company ID is required.";
+        } else if (!is_numeric($director_id)) {
+            $this->errors['company-id'] = "The Production Company's ID must be a number.";
+        }
+
     }
 
+    private function checkDirectorExists($id): void
+    {
+        $director = $this->db->getDirectorById($id);
+        if ($director == null) {
+            $this->errors['director-id'] = "Director ID not valid";
+        }
+    }
+
+    private function checkCompanyExists($id): void
+    {
+        $company = $this->db->getCompanyById($id);
+        if ($company == null) {
+            $this->errors['company-id'] = "Production Company ID not valid";
+        }
+    }
 
 }
