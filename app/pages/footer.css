@@ -1,0 +1,16 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    border-top: 1px solid white;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(126,51,123,1) 10%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    color: white;
+    margin: 0.5rem;
+}
