@@ -71,7 +71,7 @@
         </table>
     </section>
 
-    <section class="table-container">
+    <section class="table-container_director">
         <table class="table">
             <caption class="table-caption">
                 Directors
