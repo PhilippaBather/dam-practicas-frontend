@@ -85,7 +85,6 @@ class Production_Model
         if ($_POST['production-active'] == 'active-true') {
             return 1;
         }
-
         return 0;
     }
 
