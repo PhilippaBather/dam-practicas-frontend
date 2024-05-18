@@ -69,16 +69,16 @@
                 <label for="film-director-id">Director ID</label>
                 <input type="text" name="film-director-id" id="film-director-id" class="form_input"
                        value="<?php if(isset($_POST['film-director-id'])) echo htmlspecialchars($_POST['film-director-id'])?>">
-                <?php if (isset($_SESSION['error']['director'])): ?>
-                    <p class="error_msg"><?= $_SESSION['error']['director']; ?></p>
+                <?php if (isset($_SESSION['error']['director-id'])): ?>
+                    <p class="error_msg"><?= $_SESSION['error']['director-id']; ?></p>
                 <?php endif; ?>
             </div>
             <div class="form_container-input">
                 <label for="film-company-id">Production Company ID</label>
                 <input type="text" name="film-company-id" id="film-company-id" class="form_input"
                        value="<?php if(isset($_POST['film-company-id'])) echo htmlspecialchars($_POST['film-company-id'])?>">
-                <?php if (isset($_SESSION['error']['company'])): ?>
-                    <p class="error_msg"><?= $_SESSION['error']['company']; ?></p>
+                <?php if (isset($_SESSION['error']['company-id'])): ?>
+                    <p class="error_msg"><?= $_SESSION['error']['company-id']; ?></p>
                 <?php endif; ?>
             </div>
             <div class="form_container-btns">

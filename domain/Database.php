@@ -59,7 +59,7 @@ class Database
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getSelectedCompany($company_id)
+    public function getCompanyById($company_id)
     {
         $conn = $this->getConnection();
         $sql_get_company =
@@ -79,7 +79,7 @@ class Database
 
     }
 
-    public function deleteSelectedCompany($company_id): void
+    public function deleteCompanyById($company_id): void
     {
         $conn = $this->getConnection();
         $sql_delete_company =
