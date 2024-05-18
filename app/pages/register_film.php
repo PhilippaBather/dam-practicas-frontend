@@ -82,7 +82,7 @@
                 <?php endif; ?>
             </div>
             <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+                <a href="index.php?action=film"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="add_film" value="add_film">Submit</button>
             </div>
         </form>
