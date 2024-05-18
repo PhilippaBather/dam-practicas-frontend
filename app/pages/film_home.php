@@ -59,7 +59,7 @@
                         <?php endif; ?>
                     </td>
                     <td class="table-row_td"><?= htmlspecialchars($film['release_date']); ?></td>
-                    <td class="table-row_td"><?= htmlspecialchars($film['revenue']); ?></td>
+                    <td class="table-row_td">$<?= htmlspecialchars(number_format(($film['revenue'] / 100), 2, '.', ',')); ?></td>
                     <td class="table-row_td-btn">
                         <a href="index.php?action=film&method=delete-film&id=<?= htmlspecialchars($film['id']); ?>">
                             <button class="btn-delete">Delete</button>
