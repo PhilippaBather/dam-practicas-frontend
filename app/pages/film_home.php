@@ -52,7 +52,9 @@
                     <td class="table-row_td"><?= htmlspecialchars($film['release_date']); ?></td>
                     <td class="table-row_td"><?= htmlspecialchars($film['revenue']); ?></td>
                     <td class="table-row_td-btn">
-                        <button class="btn-delete">Delete</button>
+                        <a href="index.php?action=film&method=delete-film&id=<?= htmlspecialchars($film['id']); ?>">
+                            <button class="btn-delete">Delete</button>
+                        </a>
                     </td>
                     <td class="table-row_td-btn">
                         <button class="btn-update">Update</button>
