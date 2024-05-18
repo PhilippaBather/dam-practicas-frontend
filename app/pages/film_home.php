@@ -38,33 +38,27 @@
             </tr>
             </thead>
             <tbody>
+            <?php foreach ($films as $film) : ?>
             <tr>
-                <th class="table-row_th" scope="row">The Lego Batman Movie</th>
-                <td class="table-row_td">Comedy</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td">10/02/2017</td>
-                <td class="table-row_td">$312,000,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
+                <th class="table-row_th" scope="row"><?= htmlspecialchars($film['title']); ?></th>
+                <td class="table-row_td"><?= htmlspecialchars($film['genre']); ?></td>
+                <td class="table-row_td">
+                    <?php if ($film['family_friendly'] == 1): ?>
+                        &#10003;
+                    <?php else: ?>
+                    &#10060;
+                    <?php endif; ?>
+                </td>
+                <td class="table-row_td"><?= htmlspecialchars($film['release_date']); ?></td>
+                <td class="table-row_td"><?= htmlspecialchars($film['revenue']); ?></td>
+                <td class="table-row_td-btn">
+                    <button class="btn-delete">Delete</button>
+                </td>
+                <td class="table-row_td-btn">
+                    <button class="btn-update">Update</button>
+                </td>
             </tr>
-            <tr>
-                <th class="table-row_th" scope="row">This is England</th>
-                <td class="table-row_td">Drama</td>
-                <td class="table-row_td">No</td>
-                <td class="table-row_td">04/01/2008</td>
-                <td class="table-row_td">$5,000,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
-            <tr>
-                <th class="table-row_th" scope="row">Pulp Fiction</th>
-                <td class="table-row_td">Drama</td>
-                <td class="table-row_td">No</td>
-                <td class="table-row_td">14/10/1994</td>
-                <td class="table-row_td">$107,000,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
 
@@ -84,22 +78,27 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th class="table-row_th" scope="row">Stanley Kubrick</th>
-                <td class="table-row_td">26/07/1928</td>
-                <td class="table-row_td">4</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
-            <tr>
-                <th class="table-row_th" scope="row">Spike Lee</th>
-                <td class="table-row_td">20/03/1957</td>
-                <td class="table-row_td">3</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
+            <?php foreach ($directors as $director) : ?>
+                <tr>
+                    <th class="table-row_th"
+                        scope="row"><?= htmlspecialchars($director['name']); ?> <?= htmlspecialchars($director['surname']); ?></th>
+                    <td class="table-row_td"><?= htmlspecialchars($director['birthdate']); ?></td>
+                    <td class="table-row_td"><?= htmlspecialchars($director['accolades']); ?></td>
+                    <td class="table-row_td">
+                        <?php if ($director['oscar'] == 1): ?>
+                            &#10003;
+                        <?php else: ?>
+                        &#10060;
+                    </td>
+                    <?php endif; ?>
+                    <td class="table-row_td-btn">
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                    <td class="table-row_td-btn">
+                        <button class="btn-update">Update</button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </section>

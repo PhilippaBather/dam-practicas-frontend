@@ -36,39 +36,31 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th class="table-row_th" scope="row">Universal Studios</th>
-                <td class="table-row_td">Los Angeles</td>
-                <td class="table-row_td">30/04/1912</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td">$1,900,000,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
-            <tr>
-                <th class="table-row_th" scope="row">20th Century Studios</th>
-                <td class="table-row_td">Los Angeles</td>
-                <td class="table-row_td">31/05/1935</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td">$1,890,000,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
-            <tr>
-                <th class="table-row_th" scope="row">Yash Raj Films</th>
-                <td class="table-row_td">Mumbai</td>
-                <td class="table-row_td">1970</td>
-                <td class="table-row_td">Yes</td>
-                <td class="table-row_td">$180,935,000</td>
-                <td class="table-row_td-btn"><button class="btn-delete">Delete</button></td>
-                <td class="table-row_td-btn"><button class="btn-update">Update</button></td>
-            </tr>
+            <?php foreach ($production_companies as $company) : ?>
+                <tr>
+                    <th class="table-row_th" scope="row"><?= htmlspecialchars($company['name']); ?></th>
+                    <td class="table-row_td"><?= htmlspecialchars($company['location']); ?></td>
+                    <td class="table-row_td"><?= htmlspecialchars($company['established']); ?></td>
+                    <td class="table-row_td">
+                        <?php if ($company['active'] == 1): ?>
+                            &#10003;
+                        <?php else: ?>
+                            &#10060;
+                        <?php endif; ?>
+                    <td class="table-row_td">$<?= htmlspecialchars($company['revenue']); ?></td>
+                    <td class="table-row_td-btn">
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                    <td class="table-row_td-btn">
+                        <button class="btn-update">Update</button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
-
     </section>
 
 
-<?php include 'footer.php' ?>
+    <?php include 'footer.php' ?>
 </body>
 </html>
