@@ -24,15 +24,15 @@
         <form class="form" method="post" name="delete_company">
             <div class="form_container-input">
                 <label for="production-name">Name</label>
-                <input type="text" name="production-name" id="production-name" class="form_input" value="<?= htmlspecialchars($data->getName()); ?>">
+                <input type="text" name="production-name" id="production-name" class="form_input" value="<?= htmlspecialchars($data->getName()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="production-location">Location</label>
-                <input type="text" name="production-location" id="production-location" class="form_input" value="<?= htmlspecialchars($data->getLocation()); ?>">
+                <input type="text" name="production-location" id="production-location" class="form_input" value="<?= htmlspecialchars($data->getLocation()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="production-est">Established</label>
-                <input type="date" name="production-est" id="production-est" class="form_input" value="<?= htmlspecialchars($data->getEstablished()); ?>">
+                <input type="date" name="production-est" id="production-est" class="form_input" value="<?= htmlspecialchars($data->getEstablished()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <fieldset>
@@ -51,10 +51,10 @@
             </div>
             <div class="form_container-input">
                 <label for="production-revenue">Revenue for 2023</label>
-                <input type="text" name="production-revenue" id="production-revenue" class="form_input" value="$<?= htmlspecialchars($data->getRevenue()); ?>">
+                <input type="text" name="production-revenue" id="production-revenue" class="form_input" value="$<?= htmlspecialchars($data->getRevenue()); ?>" disabled>
             </div>
-            <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+            <a class="form_container-btns">
+                <a href="index.php?action=production"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="delete_company" value="delete_company">Delete</button>
             </div>
         </form>
