@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/app/pages/main.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/navigation.css">
-    <link rel="stylesheet" type="text/css" href="/app/pages/update_company.css">
+    <link rel="stylesheet" type="text/css" href="/app/pages/form.css">
     <link rel="stylesheet" type="text/css" href="/app/pages/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
 
     <h1 class="page-title">Update Production Company Details</h1>
     <div class="form_container">
-        <form class="form" method="post" name="update_company">
+        <form class="form" method="post" name="delete_company">
             <div class="form_container-input">
                 <label for="production-name">Name</label>
                 <input type="text" name="production-name" id="production-name" class="form_input" value="<?= htmlspecialchars($data->getName()); ?>">
@@ -55,7 +55,6 @@
             </div>
             <div class="form_container-btns">
                 <button type="button" class="form_btns">Cancel</a></button>
-                <button type="submit" class="form_btns" name="update_company" value="update_company">Update</button>
                 <button type="submit" class="form_btns" name="delete_company" value="delete_company">Delete</button>
             </div>
         </form>

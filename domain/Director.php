@@ -1,5 +1,6 @@
 <?php
 
+namespace domain;
 class Director
 {
 
@@ -9,6 +10,9 @@ class Director
     private string $birthdate;
     private string $oscar;
 
+    public function __construct0()
+    {}
+
     /**
      * @param string $name
      * @param string $surname
@@ -16,7 +20,7 @@ class Director
      * @param string $birthdate
      * @param string $has_oscar
      */
-    public function __construct(string $name, string $surname, int $accolades, string $birthdate, string $has_oscar)
+    public function __construct1(string $name, string $surname, int $accolades, string $birthdate, string $has_oscar)
     {
         $this->name = $name;
         $this->surname = $surname;

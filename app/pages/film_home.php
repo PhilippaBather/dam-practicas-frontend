@@ -39,25 +39,25 @@
             </thead>
             <tbody>
             <?php foreach ($films as $film) : ?>
-            <tr>
-                <th class="table-row_th" scope="row"><?= htmlspecialchars($film['title']); ?></th>
-                <td class="table-row_td"><?= htmlspecialchars($film['genre']); ?></td>
-                <td class="table-row_td">
-                    <?php if ($film['family_friendly'] == 1): ?>
-                        &#10003;
-                    <?php else: ?>
-                    &#10060;
-                    <?php endif; ?>
-                </td>
-                <td class="table-row_td"><?= htmlspecialchars($film['release_date']); ?></td>
-                <td class="table-row_td"><?= htmlspecialchars($film['revenue']); ?></td>
-                <td class="table-row_td-btn">
-                    <button class="btn-delete">Delete</button>
-                </td>
-                <td class="table-row_td-btn">
-                    <button class="btn-update">Update</button>
-                </td>
-            </tr>
+                <tr>
+                    <th class="table-row_th" scope="row"><?= htmlspecialchars($film['title']); ?></th>
+                    <td class="table-row_td"><?= htmlspecialchars($film['genre']); ?></td>
+                    <td class="table-row_td">
+                        <?php if ($film['family_friendly'] == 1): ?>
+                            &#10003;
+                        <?php else: ?>
+                            &#10060;
+                        <?php endif; ?>
+                    </td>
+                    <td class="table-row_td"><?= htmlspecialchars($film['release_date']); ?></td>
+                    <td class="table-row_td"><?= htmlspecialchars($film['revenue']); ?></td>
+                    <td class="table-row_td-btn">
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                    <td class="table-row_td-btn">
+                        <button class="btn-update">Update</button>
+                    </td>
+                </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
@@ -92,7 +92,9 @@
                     </td>
                     <?php endif; ?>
                     <td class="table-row_td-btn">
-                        <button class="btn-delete">Delete</button>
+                        <a href="index.php?action=film&method=delete-director&id=<?= htmlspecialchars($director['id']); ?>">
+                            <button class="btn-delete">Delete</button>
+                        </a>
                     </td>
                     <td class="table-row_td-btn">
                         <button class="btn-update">Update</button>
