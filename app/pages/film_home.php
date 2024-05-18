@@ -65,9 +65,6 @@
                             <button class="btn-delete">Delete</button>
                         </a>
                     </td>
-                    <td class="table-row_td-btn">
-                        <button class="btn-update">Update</button>
-                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -105,9 +102,6 @@
                         <a href="index.php?action=film&method=delete-director&id=<?= htmlspecialchars($director['id']); ?>">
                             <button class="btn-delete">Delete</button>
                         </a>
-                    </td>
-                    <td class="table-row_td-btn">
-                        <button class="btn-update">Update</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
