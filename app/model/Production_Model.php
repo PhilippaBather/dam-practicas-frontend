@@ -37,7 +37,7 @@ class Production_Model
             $company_id = $_GET['id'];
             try {
                 $db = new Database();
-                $db->deleteSelectedCompany($company_id);
+                $db->deleteCompanyById($company_id);
                 return true;
             } catch (\Exception $e) {
                 echo $e->getMessage();
