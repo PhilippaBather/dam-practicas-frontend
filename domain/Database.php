@@ -173,4 +173,24 @@ class Database
 
         return $stmt->execute();
     }
+
+    public function addDirector($name, $surname, $dob, $accolades, $oscar): bool
+    {
+        $conn = $this->getConnection();
+        $dob = date("y-m-d");
+        $sql =
+            "INSERT INTO directors (accolades, birthdate, name, oscar, surname)
+            VALUES (:accolades, :birthdate, :name, :oscar, :surname)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(":accolades", $accolades);
+        $stmt->bindValue(":birthdate", $dob);
+        $stmt->bindValue(":name", $name);
+        $stmt->bindValue(":oscar", $oscar);
+        $stmt->bindValue(":surname", $surname);
+
+        $conn = null;
+
+        return $stmt->execute();
+    }
 }

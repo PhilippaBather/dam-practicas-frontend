@@ -28,7 +28,9 @@ class Film_Controller extends Controller
         $isDirectorDeleted = $this->film_model->deleteDirector();
         $isFilmDeleted = $this->film_model->deleteFilm();
 
-        if ($isDirectorDeleted | $isFilmDeleted) {
+        $is_director_added = $this->film_model->addDirector();
+
+        if ($isDirectorDeleted | $isFilmDeleted | $is_director_added == 'film') {
             $this->redirect('film', null);
         }
 
@@ -38,6 +40,8 @@ class Film_Controller extends Controller
         } else if (isset($_GET['method']) && $_GET['method'] == 'delete-film') {
             $film = $this->film_model->getFilmById();
             $this->getView('delete_film', $film);
+        } else if (isset($_GET['method']) && $_GET['method'] == 'add-director') {
+            $this->getView('register_director');
         } else {
             require_once $this->film_view->render();
         }
