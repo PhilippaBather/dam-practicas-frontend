@@ -19,6 +19,15 @@
 
 <main class="main-container">
 
+    <div class="title-container">
+        <a href="index.php?action=film&method=add-film">
+            <button type="button" class="btn-add">Add Film</button>
+        </a>
+        <a href="index.php?action=film&method=add-director">
+            <button type="button" class="btn-add">Add Director</button>
+        </a>
+    </div>
+
     <h1 class="page-title">Film Affinity</h1>
 
     <h2 class="page-title_subheading">All you need to know about films</h2>
@@ -63,7 +72,6 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-
     </section>
 
     <section class="table-container">
