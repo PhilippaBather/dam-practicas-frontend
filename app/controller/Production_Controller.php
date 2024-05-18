@@ -21,16 +21,19 @@ class Production_Controller extends Controller
     public function renderView(): void
     {
         $production_companies = $this->production_model->getProductionCompanies();
+        $is_added = $this->production_model->addProductionCompany();
 
         $isDeleted = $this->production_model->deleteCompany();
 
-        if ($isDeleted) {
+        if ($isDeleted | $is_added == 'production') {
             $this->redirect('production', null);
         }
 
         if (isset($_GET['method']) && $_GET['method'] == 'update-company') {
             $company = $this->production_model->getSelectedCompany();
             $this->getView("delete_company", $company);
+        } else if ((isset($_GET['method']) && $_GET['method'] == 'add-company')) {
+            $this->getView('register_company');
         } else {
             require_once $this->production_view->render();
         }
