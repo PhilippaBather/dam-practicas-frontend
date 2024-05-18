@@ -27,7 +27,7 @@ class Production_Model
     public function getSelectedCompany()
     {
         $company_id = $_GET['id'];
-        return $this->db->getSelectedCompany($company_id);
+        return $this->db->getCompanyById($company_id);
     }
 
     public function deleteCompany(): bool
