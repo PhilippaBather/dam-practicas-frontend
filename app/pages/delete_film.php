@@ -23,15 +23,15 @@
         <form class="form" method="post" name="delete_film">
             <div class="form_container-input">
                 <label for="film-title">Title</label>
-                <input type="text" name="film-title" id="film-title" class="form_input" value="<?= htmlspecialchars($data->getTitle()); ?>">
+                <input type="text" name="film-title" id="film-title" class="form_input" value="<?= htmlspecialchars($data->getTitle()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="film-genre">Genre</label>
-                <input type="text" name="film-genre" id="film-genre" class="form_input" value="<?= htmlspecialchars($data->getGenre()); ?>">
+                <input type="text" name="film-genre" id="film-genre" class="form_input" value="<?= htmlspecialchars($data->getGenre()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="film-release">Release Date</label>
-                <input type="date" name="film-release" id="film-release" class="form_input" value="<?= htmlspecialchars($data->getReleaseDate()); ?>">
+                <input type="date" name="film-release" id="film-release" class="form_input" value="<?= htmlspecialchars($data->getReleaseDate()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <fieldset>
@@ -49,7 +49,7 @@
                 </fieldset>
             </div>
             <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+                <a href="index.php?action=film"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="delete_film" value="delete_film">Delete</button>
             </div>
         </form>
