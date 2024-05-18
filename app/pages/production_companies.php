@@ -27,7 +27,7 @@
 
     <h1 class="page-title">Film Affinity</h1>
 
-    <section class="table-container">
+    <section class="table-container_companies">
         <table class="table">
             <caption class="table-caption">
                 Production Companies

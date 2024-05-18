@@ -1,9 +1,13 @@
-.table-container {
+.table-container, .table-container_director, .table-container_companies {
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.table-container_director, .table-container_companies {
+    margin-bottom: 5rem;
 }
 
 
