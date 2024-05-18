@@ -21,6 +21,30 @@ a {
     font-family: "Kode Mono", monospace;
 }
 
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-add {
+    border-radius: 5px;
+    border: 1px solid purple;
+    background: linear-gradient(90deg, rgba(252, 176, 69, 1) 0%, rgba(253, 29, 29, 1) 10%, rgba(126, 51, 123, 1) 50%, rgba(131, 58, 180, 1) 100%);
+    color: white;
+    cursor: pointer;
+    font-family: "Kode Mono", monospace;
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    text-align: center;
+}
+
+.btn-add:hover {
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(126, 51, 123, 1) 10%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    color: black;
+}
+
 .page-title, .page-title_subheading, .section-title {
     text-align: center;
     padding: 1rem;
@@ -41,6 +65,7 @@ a {
     padding: 0.2rem 0.4rem 0.2rem 0.4rem;
     text-align: center;
 }
+
 .btn-delete {
     background-color: rgba(253, 29, 29, 1);
 }
@@ -59,4 +84,11 @@ a {
 
 .btn-update:hover {
     color: purple;
+}
+
+.error_msg {
+    color: yellow;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
