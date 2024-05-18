@@ -153,4 +153,24 @@ class Database
         $stmt->bindParam(':film_id', $film_id);
         $stmt->execute();
     }
+
+    public function addProductionCompany($name, $location, $revenue, $established, $active): bool
+    {
+        $conn = $this->getConnection();
+        $established = date("y-m-d");
+        $sql =
+            "INSERT INTO production_companies (active, established, location, name, revenue)
+            VALUES (:active, :established, :location, :name, :revenue)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(":active", $active);
+        $stmt->bindValue(":established", $established);
+        $stmt->bindValue(":location", $location);
+        $stmt->bindValue(":name", $name);
+        $stmt->bindValue(":revenue", $revenue);
+
+        $conn = null;
+
+        return $stmt->execute();
+    }
 }
