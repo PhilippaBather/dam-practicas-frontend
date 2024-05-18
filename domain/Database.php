@@ -122,4 +122,35 @@ class Database
         $stmt->bindParam(':director_id', $director_id);
         $stmt->execute();
     }
+
+    public function getFilmById(mixed $film_id)
+    {
+        $conn = $this->getConnection();
+        $sql_get_film =
+            "SELECT * FROM films
+             WHERE id = :film_id;";
+
+        $stmt = $conn->prepare($sql_get_film);
+        $stmt->bindParam(':film_id', $film_id);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, Film::class);
+
+        $conn = null;
+
+        return $stmt->fetch();
+    }
+
+    public function deleteFilmById($film_id): void
+    {
+        $conn = $this->getConnection();
+        $sql_delete_film =
+            "DELETE FROM films
+            WHERE id = :film_id;";
+
+        $stmt = $conn->prepare($sql_delete_film);
+        $stmt->bindParam(':film_id', $film_id);
+        $stmt->execute();
+    }
 }
