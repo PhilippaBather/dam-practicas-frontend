@@ -69,16 +69,16 @@ class Film_Model
         return false;
     }
 
-    public function addDirector()
+    public function addDirector(): string
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_director'])) {
             $name = Data_Validation::cleanData($_POST['director-name']);
             $surname = Data_Validation::cleanData($_POST['director-surname']);
             $dob = Data_Validation::cleanData($_POST['director-dob']);
             $accolades = Data_Validation::cleanData($_POST['director-accolades']);
-            $oscar = $this->handleRadioBtnInput();
+            $oscar = $this->handleDirectorRadioBtnInput();
 
-            $this->validateInput($name, $surname, $dob, $accolades);
+            $this->validateDirectorInput($name, $surname, $dob, $accolades);
 
             if (empty($this->errors)) {
                 try {
@@ -103,7 +103,43 @@ class Film_Model
         return "register_director";
     }
 
-    private function handleRadioBtnInput(): int
+    public function addFilm(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_film'])) {
+            $title = Data_Validation::cleanData($_POST['film-title']);
+            $genre = Data_Validation::cleanData($_POST['film-genre']);
+            $revenue = Data_Validation::cleanData($_POST['film-revenue']);
+            $release_date = Data_Validation::cleanData($_POST['film-release-date']);
+            $director_id = Data_Validation::cleanData($_POST['film-director-id']);
+            $company_id = Data_Validation::cleanData($_POST['film-company-id']);
+            $family_friendly = $this->handleFilmRadioBtnInput();
+
+            $this->validateFilmInput($title, $genre, $revenue, $release_date);
+
+            if (empty($this->errors)) {
+                try {
+                    $is_added = $this->db->addFilm($title, $genre, $revenue, $release_date, $family_friendly, $director_id, $company_id);
+                    Data_Validation::unsetError();
+
+                    if (!$is_added) {
+                        throw new RegistrationExceptionError(": internal server error.");
+
+                    } else {
+                        return "film";
+                    }
+
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                    $this->errors['reg_exception'] = $e->getMessage();
+                }
+            } else {
+                $_SESSION['error'] = $this->errors;
+            }
+        }
+        return "register_film";
+    }
+
+    private function handleDirectorRadioBtnInput(): int
     {
         if ($_POST['director-oscar'] == 'oscar-true') {
             return 1;
@@ -111,7 +147,15 @@ class Film_Model
         return 0;
     }
 
-    private function validateInput(string $name, string $surname, string $dob, string $accolades)
+    private function handleFilmRadioBtnInput(): int
+    {
+        if ($_POST['film-family-friendly'] == 'friendly-true') {
+            return 1;
+        }
+        return 0;
+    }
+
+    private function validateDirectorInput(string $name, string $surname, string $dob, string $accolades): void
     {
         if (strlen($name) < 2) {
             $this->errors["name"] = "Name must be 2 or more characters.";
@@ -131,5 +175,29 @@ class Film_Model
             $this->errors["accolades"] = "A valid number is required";
         }
     }
+
+    private function validateFilmInput(string $title, string $genre, string $revenue, string $release_date): void
+    {
+        if (strlen($title) < 2) {
+            $this->errors["title"] = "Title must be 2 or more characters.";
+        }
+
+        if (strlen($genre) < 2) {
+            $this->errors["genre"] = "A genre must be 2 or more characters.";
+        }
+
+        if (empty($revenue)){
+            $this->errors["revenue"] = "Revenue must be entered.";
+        } else if (!is_numeric($revenue)) {
+            $this->errors["revenue"] = "A valid number is required";
+        }
+
+        if (empty($release_date)) {
+            $this->errors["release"] = "Valid release date is required.";
+        } else if (!Data_Validation::validateDate($release_date)) {
+            $this->errors["release"] = "A future release date is not valid.";
+        }
+    }
+
 
 }
