@@ -23,19 +23,19 @@
         <form class="form" method="post" name="delete_director">
             <div class="form_container-input">
                 <label for="director-name">Name</label>
-                <input type="text" name="director-name" id="director-name" class="form_input" value="<?= htmlspecialchars($data->getName()); ?>">
+                <input type="text" name="director-name" id="director-name" class="form_input" value="<?= htmlspecialchars($data->getName()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="director-surname">Surname</label>
-                <input type="text" name="director-surname" id="director-surname" class="form_input"  value="<?= htmlspecialchars($data->getSurname()); ?>">
+                <input type="text" name="director-surname" id="director-surname" class="form_input"  value="<?= htmlspecialchars($data->getSurname()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="director-accolades">Accolades</label>
-                <input type="number" name="director-accolades" id="director-accolades" class="form_input"  value="<?= htmlspecialchars($data->getAccolades()); ?>">
+                <input type="number" name="director-accolades" id="director-accolades" class="form_input"  value="<?= htmlspecialchars($data->getAccolades()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <label for="production-est">Birthdate</label>
-                <input type="date" name="production-est" id="production-est" class="form_input"  value="<?= htmlspecialchars($data->getBirthdate()); ?>">
+                <input type="date" name="production-est" id="production-est" class="form_input"  value="<?= htmlspecialchars($data->getBirthdate()); ?>" disabled>
             </div>
             <div class="form_container-input">
                 <fieldset>
@@ -53,7 +53,7 @@
                 </fieldset>
             </div>
             <div class="form_container-btns">
-                <button type="button" class="form_btns">Cancel</a></button>
+                <a href="index.php?action=film"><button type="button" class="form_btns">Cancel</button></a>
                 <button type="submit" class="form_btns" name="delete_director">Delete</button>
             </div>
         </form>
