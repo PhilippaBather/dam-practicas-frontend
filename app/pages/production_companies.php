@@ -19,6 +19,12 @@
 
 <main class="main-container">
 
+    <div class="title-container">
+        <a href="index.php?action=production&method=add-company">
+            <button type="button" class="btn-add">Add Company</button>
+        </a>
+    </div>
+
     <h1 class="page-title">Film Affinity</h1>
 
     <section class="table-container">
@@ -52,9 +58,6 @@
                         <a href="index.php?action=production&method=update-company&id=<?= htmlspecialchars($company['id']); ?>">
                             <button class="btn-delete">Delete</button>
                         </a>
-                    </td>
-                    <td class="table-row_td-btn">
-                        <button class="btn-update">Update</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
