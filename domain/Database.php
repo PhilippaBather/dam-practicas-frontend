@@ -193,4 +193,26 @@ class Database
 
         return $stmt->execute();
     }
+
+    public function addFilm($title, $genre, $revenue, $release_date, $family_friendly, $director_id, $production_id): bool
+    {
+        $conn = $this->getConnection();
+        $release_date = date("y-m-d");
+        $sql =
+            "INSERT INTO films (family_friendly, genre, release_date, revenue, title, director_id, production_company_id)
+            VALUES (:family_friendly, :genre, :release_date, :revenue, :title, :director_id, :production_company_id)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(":family_friendly", $family_friendly);
+        $stmt->bindValue(":genre", $genre);
+        $stmt->bindValue(":release_date", $release_date);
+        $stmt->bindValue(":revenue", $revenue);
+        $stmt->bindValue(":title", $title);
+        $stmt->bindValue(":director_id", $director_id);
+        $stmt->bindValue(":production_company_id", $production_id);
+
+        $conn = null;
+
+        return $stmt->execute();
+    }
 }
