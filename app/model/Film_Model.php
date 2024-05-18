@@ -189,7 +189,7 @@ class Film_Model
             $this->errors["genre"] = "A genre must be 2 or more characters.";
         }
 
-        if (empty($revenue)){
+        if (empty($revenue) && $revenue != 0){
             $this->errors["revenue"] = "Revenue must be entered.";
         } else if (!is_numeric($revenue)) {
             $this->errors["revenue"] = "A valid number is required";
